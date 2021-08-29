@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    //relacion uno a muchos
+    public function services(){
+        return $this->hasMany('App\Models\Service');
+    }
 }
