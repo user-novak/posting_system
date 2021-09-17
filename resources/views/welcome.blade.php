@@ -110,7 +110,7 @@
                             <div class="px-6 py-4">
                                 <h1>{{ Str::limit($post->title, 20) }}</h1>
                                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                                <p>{{ Str::limit($post->product->description, 40) }}</p>
+                                <p>{{ Str::limit($post->product->description, 100) }}</p>
                                 <div class="flex">
                                     <p class="text-sm text-gray-500 ml-auto">
                                         <i class="fas fa-tags"></i>

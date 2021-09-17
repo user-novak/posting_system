@@ -6,7 +6,7 @@
             'active' => request()->routeIs('home'),
             ],
         [
-            'name' => 'Post',
+            'name' => 'Posts',
             'route' => '#',
             'active' => false,
             ],
@@ -15,6 +15,11 @@
             'route' => '#',
             'active' => false,
             ],
+        [
+            'name' => 'Documentacion',
+            'route' => 'https://user-novak.github.io/documentacion/',
+            'active' => false, 
+        ]
         ];
 @endphp
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow">
