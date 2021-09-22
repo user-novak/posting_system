@@ -117,7 +117,7 @@
                                         {{ $post->product->category->name }}
                                     </p>
                                 </div>
-                                <a href="#"
+                                <a href="{{route('post.show',$post)}}"
                                     class="block text-center w-full mt-4 py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
                                     Más información
                                 </a>

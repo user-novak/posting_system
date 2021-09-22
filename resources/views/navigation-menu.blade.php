@@ -7,8 +7,8 @@
             ],
         [
             'name' => 'Posts',
-            'route' => '#',
-            'active' => false,
+            'route' => route('posts.index'),
+            'active' => request()->routeIs('post.index'),
             ],
         [
             'name' => 'MyPosts',
