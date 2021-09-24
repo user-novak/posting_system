@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(8);
         $imgs = Image::all();
         return view('welcome',compact('posts','imgs'));
     }

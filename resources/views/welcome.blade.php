@@ -1,5 +1,5 @@
 <x-app-layout>
-    
+
     {{-- commercial section --}}
     <section class="bg-cover" style="background-image: url({{ asset('img/home/sale.jpg') }})">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
@@ -30,7 +30,8 @@
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
             <article>
                 <figure>
-                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/producto.png') }}" alt="">
+                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/producto.png') }}"
+                        alt="">
                 </figure>
 
                 <header class="mt-2">
@@ -43,7 +44,8 @@
 
             <article>
                 <figure>
-                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/servicio.png') }}" alt="">
+                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/servicio.png') }}"
+                        alt="">
                 </figure>
 
                 <header class="mt-2">
@@ -105,27 +107,16 @@
             @foreach ($posts as $post)
                 @foreach ($imgs as $img)
                     @if ($img->id == $post->id)
-                        <article class="bg-white shadow-lg rounded overflow-hidden">
-                            <img class="h-35 w-full object-cover" src="{{ $img->url }}" alt=""><br>
-                            <div class="px-6 py-4">
-                                <h1>{{ Str::limit($post->title, 20) }}</h1>
-                                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                                <p>{{ Str::limit($post->product->description, 100) }}</p>
-                                <div class="flex">
-                                    <p class="text-sm text-gray-500 ml-auto">
-                                        <i class="fas fa-tags"></i>
-                                        {{ $post->product->category->name }}
-                                    </p>
-                                </div>
-                                <a href="{{route('post.show',$post)}}"
-                                    class="block text-center w-full mt-4 py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
-                                    Más información
-                                </a>
-                            </div>
-                        </article>
+                        <x-post-card :post="$post" :img="$img" />
                     @endif
                 @endforeach
             @endforeach
         </div>
     </section>
+
+    {{-- aplicando el paginate --}}
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
+        {{ $posts->links() }}
+    </div>
+    
 </x-app-layout>
