@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Card extends Model
 {
     use HasFactory;
 
@@ -16,8 +16,8 @@ class Post extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function product(){
-        return $this->belongsTo('App\Models\Product');
+    public function service(){
+        return $this->belongsTo('App\Models\Service');
     }
 
     //relacion uno a uno polimorfica

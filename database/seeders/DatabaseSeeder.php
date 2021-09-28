@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Type;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductSeeder::class);
         $this->call(ServiceSeeder::class);
         $this->call(PostSeeder::class);
+        $this->call(CardSeeder::class);
     }
 }

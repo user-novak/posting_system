@@ -68,4 +68,8 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Models\Post');
     }
+
+    public function cards(){
+        return $this->hasMany('App\Models\Card');
+    }
 }

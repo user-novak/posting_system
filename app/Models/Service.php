@@ -12,8 +12,8 @@ class Service extends Model
     protected $guarded = ['id'];
 
     //relacion uno a muchos
-     public function posts(){
-        return $this->hasMany('App\Models\Post');
+     public function cards(){
+        return $this->hasMany('App\Models\Card');
     }
 
     //relacion uno a muchos inversa
