@@ -6,14 +6,14 @@
             'active' => request()->routeIs('home'),
             ],
         [
-            'name' => 'Posts',
+            'name' => 'Productos',
             'route' => route('posts.index'),
             'active' => request()->routeIs('post.index'),
             ],
         [
-            'name' => 'MyPosts',
-            'route' => '#',
-            'active' => false,
+            'name' => 'Servicios',
+            'route' => route('cards.index'),
+            'active' => request()->routeIs('cards.index'),
             ],
         [
             'name' => 'Documentacion',

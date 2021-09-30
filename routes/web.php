@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('posts',[PostController::class,'index'])->name('posts.index');
 
+Route::get('cards',[CardController::class,'index'])->name('cards.index');
+
 Route::get('posts/{post}', function ($post) {
     return "info del post";
 })->name('post.show');
+
+Route::get('cards/{card}', function ($card) {
+    return "info del card";
+})->name('card.show');
