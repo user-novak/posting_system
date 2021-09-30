@@ -12,10 +12,8 @@
                 </p>
                 <!-- component -->
                 <div class="relative text-gray-600">
-                    <input type="search" name="serch" placeholder="Search"
-                        class="w-full bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
-                    <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute right-0 top-0">
+                    <input type="search" name="serch" placeholder="Search" class="w-full bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute right-0 top-0">
                         Buscar
                     </button>
                 </div>
@@ -26,12 +24,10 @@
     {{-- content section --}}
     <section class="mt-24">
         <h1 class="text-grey-600 text-center text-3xl mb-6">TE OFRECEMOS</h1>
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
             <article>
                 <figure>
-                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/producto.png') }}"
-                        alt="">
+                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/producto.png') }}" alt="">
                 </figure>
 
                 <header class="mt-2">
@@ -44,8 +40,7 @@
 
             <article>
                 <figure>
-                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/servicio.png') }}"
-                        alt="">
+                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/servicio.png') }}" alt="">
                 </figure>
 
                 <header class="mt-2">
@@ -86,30 +81,45 @@
 
     {{-- catalog section --}}
     <section class="mt-24 bg-gray-700 py-12">
-        <h1 class="text-center text-white text-3xl">¿No sabes por donde empezar?</h1>
-        <p class="text-center text-white">Dale una revisada a nuestras categorias de productos y tipos de servicio</p>
-
-        <div class="flex justify-center mt-4">
-            <a href="#"
-                class="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
-                Click me
-            </a>
+        <div class="container mb-3">
+            <h1 class="text-center text-white text-3xl">¿No sabes por donde empezar?</h1>
+            <p class="text-center text-white">Dale una revisada a nuestras categorias de productos y tipos de servicio</p>
         </div>
+
+        <div class="grid grid-cols-3">
+            <div class="flex justify-center mt-4">
+                <a href="{{route('posts.index')}}" class="py-4 px-10 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+                    Productos
+                </a>
+            </div>
+
+            <div class="flex justify-center mt-4">
+                <a href="https://user-novak.github.io/documentacion/" target="_blank" class="py-4 px-10 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+                    Documentación
+                </a>
+            </div>
+
+            <div class="flex justify-center mt-4">
+                <a href="{{route('cards.index')}}" class="py-4 px-10 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+                    Servicios
+                </a>
+            </div>
+        </div>
+
     </section>
 
     {{-- posts section --}}
     <section class="mt-24">
         <div>
-            <h1 class="text-center text-gray-500 my-auto mx-auto py-10">Ultimos productos</h1>
+            <h1 class="text-5xl mb-5 text-center text-gray-500 my-auto mx-auto py-10">Ultimos productos</h1>
         </div>
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($posts as $post)
-                @foreach ($imgs as $img)
-                    @if ($img->id == $post->id)
-                        <x-post-card :post="$post" :img="$img" />
-                    @endif
-                @endforeach
+            @foreach ($imgs as $img)
+            @if ($img->id == $post->id)
+            <x-post-card :post="$post" :img="$img" />
+            @endif
+            @endforeach
             @endforeach
         </div>
     </section>
@@ -122,33 +132,15 @@
     {{-- cards section --}}
     <section class="mt-24">
         <div>
-            <h1 class="text-center text-gray-500 my-auto mx-auto py-10">Ultimos servicios </h1>
+            <h1 class="text-5xl mb-5 text-center text-gray-500 my-auto mx-auto py-10">Ultimos servicios </h1>
         </div>
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($cards as $card)
-                @foreach ($imgs as $img)
-                    @if ($img->id == $card->id)
-                        <article class="bg-white shadow-lg rounded overflow-hidden">
-                            <img class="h-35 w-full object-cover" src="{{ $img->url }}" alt=""><br>
-                            <div class="px-6 py-4">
-                                <h1>{{ Str::limit($card->title, 20) }}</h1>
-                                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                                <p>{{ Str::limit($card->service->description, 40) }}</p>
-                                <div class="flex">
-                                    <p class="text-sm text-gray-500 ml-auto">
-                                        <i class="fas fa-tags"></i>
-                                        {{ $card->service->type->name }}
-                                    </p>
-                                </div>
-                                <a href="#"
-                                    class="block text-center w-full mt-4 py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
-                                    más información
-                                </a>
-                            </div>
-                        </article>
-                    @endif
-                @endforeach
+            @foreach ($imgs as $img)
+            @if ($img->id == $card->id)
+            <x-card-card :card="$card" :img="$img" />
+            @endif
+            @endforeach
             @endforeach
         </div>
     </section>
