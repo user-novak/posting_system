@@ -3,10 +3,12 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use App\Models\Profile;
 use App\Models\User;
 
+
 class UserSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.
@@ -15,6 +17,12 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
+        $users = User::factory(10)->create();
+
+        foreach ($users as $user) {
+            Profile::factory(1)->create([
+                'user_id' => $user->id
+            ]);
+        }
     }
 }
