@@ -25,9 +25,7 @@ Route::get('posts',[PostController::class,'index'])->name('posts.index');
 
 Route::get('cards',[CardController::class,'index'])->name('cards.index');
 
-Route::get('posts/{post}', function ($post) {
-    return "info del post";
-})->name('post.show');
+Route::get('posts/{post}',[PostController::class,'show'])->name('posts.show');
 
 Route::get('cards/{card}', function ($card) {
     return "info del card";
