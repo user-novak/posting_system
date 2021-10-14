@@ -24,8 +24,8 @@
     </section>
 
     {{-- content section --}}
-    <section class="mt-24">
-        <h1 class="text-grey-600 text-center text-3xl mb-6">TE OFRECEMOS</h1>
+    <section class="mt-10">
+        <h1 class="text-gray-500 text-center text-5xl font-mono my-10 mx-auto ">TE OFRECEMOS</h1>
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
             <article>
@@ -118,9 +118,9 @@
     </section>
 
     {{-- posts section --}}
-    <section class="mt-24">
+    <section class="mt-10">
         <div>
-            <h1 class="text-5xl mb-5 text-center text-gray-500 my-auto mx-auto py-10">Ultimos productos</h1>
+            <h1 class="text-5xl mb-5 text-center text-gray-500 my-auto mx-auto py-10 font-mono">ULTIMOS PRODUCTOS</h1>
         </div>
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
@@ -140,9 +140,9 @@
     </div>
 
     {{-- cards section --}}
-    <section class="mt-24">
+    <section class="mt-10">
         <div>
-            <h1 class="text-5xl mb-5 text-center text-gray-500 my-auto mx-auto py-10">Ultimos servicios </h1>
+            <h1 class="text-5xl mb-5 text-center text-gray-500 my-auto mx-auto py-10 font-mono">ULTIMOS SERVICIOS</h1>
         </div>
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">

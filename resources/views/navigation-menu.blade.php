@@ -8,7 +8,7 @@ $nav_links = [
     [
         'name' => 'Productos',
         'route' => route('posts.index'),
-        'active' => request()->routeIs('post.*'),
+        'active' => request()->routeIs('posts.*'),
     ],
     [
         'name' => 'Servicios',
