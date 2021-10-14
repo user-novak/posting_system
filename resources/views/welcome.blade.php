@@ -30,7 +30,7 @@
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
             <article>
                 <figure>
-                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/producto.png') }}"
+                    <img class="rounded-xl h-48 w-full object-cover" src="{{ asset('img/home/producto.png') }}"
                         alt="">
                 </figure>
 
@@ -44,7 +44,7 @@
 
             <article>
                 <figure>
-                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/servicio.png') }}"
+                    <img class="rounded-xl h-48 w-full object-cover" src="{{ asset('img/home/servicio.png') }}"
                         alt="">
                 </figure>
 
@@ -58,7 +58,7 @@
 
             <article>
                 <figure>
-                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/simple.jpg') }}" alt="">
+                    <img class="rounded-xl h-48 w-full object-cover" src="{{ asset('img/home/simple.jpg') }}" alt="">
                 </figure>
 
                 <header class="mt-2">
@@ -71,7 +71,7 @@
 
             <article>
                 <figure>
-                    <img class="rounded-xl h-36 w-full object-cover" src="{{ asset('img/home/seguro.png') }}" alt="">
+                    <img class="rounded-xl h-48 w-full object-cover" src="{{ asset('img/home/seguro.png') }}" alt="">
                 </figure>
 
                 <header class="mt-2">
@@ -92,7 +92,7 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-3">
+        <div class="flex justify-evenly">
             <div class="flex justify-center mt-4">
                 <a href="{{ route('posts.index') }}"
                     class="py-4 px-10 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
@@ -117,48 +117,6 @@
 
     </section>
 
-    {{-- posts section --}}
-    <section class="mt-10">
-        <div>
-            <h1 class="text-5xl mb-5 text-center text-gray-500 my-auto mx-auto py-10 font-mono">ULTIMOS PRODUCTOS</h1>
-        </div>
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
-            @foreach ($posts as $post)
-                @foreach ($imgs as $img)
-                    @if ($img->id == $post->id)
-                        <x-post-card :post="$post" :img="$img" />
-                    @endif
-                @endforeach
-            @endforeach
-        </div>
-    </section>
-
-    {{-- aplicando el paginate --}}
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
-        {{ $posts->links() }}
-    </div>
-
-    {{-- cards section --}}
-    <section class="mt-10">
-        <div>
-            <h1 class="text-5xl mb-5 text-center text-gray-500 my-auto mx-auto py-10 font-mono">ULTIMOS SERVICIOS</h1>
-        </div>
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
-            @foreach ($cards as $card)
-                @foreach ($imgs as $img)
-                    @if ($img->id == $card->id)
-                        <x-card-card :card="$card" :img="$img" />
-                    @endif
-                @endforeach
-            @endforeach
-        </div>
-    </section>
-
-    {{-- aplicando el paginate --}}
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
-        {{ $cards->links() }}
-    </div>
+    @livewire('home-index')
 
 </x-app-layout>

@@ -7,41 +7,63 @@
                 <img class=" h-60 w-full object-cover" src="{{ asset($img->url) }}" alt="img"><br>
             </figure>
 
-            <div class="text-black">
+            <div class="text-black flex  flex-col gap-3">
                 <h1 class="font-serif text-4xl mb-3">
                     {{ $card->title }}
                 </h1>
                 <p>
                     {{ $card->service->description }}
                 </p>
-                <i class="fas fa-tags"></i>
-                {{ $card->service->type->name }}
+                <div>
+                    <i class="fas fa-tags"></i>
+                    {{ $card->service->type->name }}
+                </div>
             </div>
         </div>
     </section>
 
     {{-- section usersCard --}}
-    <section class="mt-0 bg-gray-200 flex gap-5 mb-0 py-0">
+    <section class="mt-0 bg-gray-200 flex flex-col lg:flex-row gap-5 mb-0 py-0 justify-center">
         @foreach ($images as $image)
             @if ($card->user->id == $image->id)
                 <div class="py-5 px-5">
                     <figure>
-                        <img class="object-contain h-48 w-full" src={{ asset($image->url) }} alt="">
+                        <img class="object-contain h-48 w-full rounded-full" src={{ asset($image->url) }} alt="">
                     </figure>
                 </div>
+
+                <div class="mt-7 flex flex-col">
+                    <h2 class="flex justify-center font-mono text-2xl">
+                        USUARIO
+                    </h2>
+                    <div class="flex flex-col mt-5">
+                        <p class="font-serif text-2xl">{{ $card->user->name }}</p>
+                        <p>{{ $card->user->email }}</p>
+                    </div>
+                </div>
+
                 <div class="mt-7">
-                    <p class="font-serif text-2xl">{{ $card->user->name }}</p>
-                    <p>{{ $card->user->email }}</p>
-                    <p>{{ $card->user->profile->cellphone_number }}</p>
-                    <p>Direccion: {{ $card->user->profile->address }}</p>
-                    <p>
-                        <i class="fab fa-facebook-square"></i>
-                        {{ $card->user->profile->facebook }}
-                    </p>
-                    <p>
-                        <i class="fab fa-linkedin"></i>
-                        {{ $card->user->profile->linkedin }}
-                    </p>
+                    <H2 class="flex justify-center font-mono text-2xl">
+                        CONTACTAR CON EL USUARIO
+                    </H2>
+                    <div class=" flex flex-col gap-2 mt-3">
+                        <p>
+                            <i class="fas fa-phone-square-alt"></i>
+                            {{ $card->user->profile->cellphone_number }}
+                        </p>
+                        <p>
+                            <i class="fas fa-home"></i>
+                            {{ $card->user->profile->address }}
+                        </p>
+                        <p>
+                            <i class="fab fa-facebook-square"></i>
+                            {{ $card->user->profile->facebook }}
+                        </p>
+                        <p>
+                            <i class="fab fa-linkedin"></i>
+                            {{ $card->user->profile->linkedin }}
+                        </p>
+                    </div>
                 </div>
             @endif
         @endforeach
