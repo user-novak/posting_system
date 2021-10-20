@@ -13,6 +13,7 @@ class PostIndex extends Component
     use WithPagination;
 
     public $category_id = 1;
+    public $flag = false;
 
     public function render()
     {
@@ -26,5 +27,13 @@ class PostIndex extends Component
         }, $this->category_id)->paginate(8);
         $imgs = Image::all();
         return view('livewire.post-index', compact('posts', 'imgs', 'categories'));
+    }
+
+    public function posts(){
+        $this->flag = false;
+    }
+
+    public function filter(){
+        $this->flag = true;
     }
 }

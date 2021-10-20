@@ -14,6 +14,7 @@ class CardIndex extends Component
     use WithPagination;
     
     public $type_id = 1;
+    public $flag = false;
 
     public function render()
     {
@@ -29,5 +30,13 @@ class CardIndex extends Component
         $imgs = Image::all();
 
         return view('livewire.card-index',compact('cards','imgs','types'));
+    }
+
+    public function cards(){
+        $this->flag = false;
+    }
+
+    public function filter(){
+        $this->flag = true;
     }
 }

@@ -16,7 +16,7 @@ class Search extends Component
     }
 
     public function getResultsProperty(){
-        return Post::where('title','LIKE','%'.$this->search . '%')->take(8)->get();
+        return Post::where('title','LIKE','%'.$this->search . '%')->take(6)->get();
     }
 
 }

@@ -16,6 +16,6 @@ class SearchCard extends Component
     }
 
     public function getResultsProperty(){
-        return Card::where('title','LIKE','%'.$this->search . '%')->take(8)->get();
+        return Card::where('title','LIKE','%'.$this->search . '%')->take(6)->get();
     }
 }
