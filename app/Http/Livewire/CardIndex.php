@@ -12,7 +12,7 @@ use Livewire\WithPagination;
 class CardIndex extends Component
 {
     use WithPagination;
-    
+
     public $type_id = 1;
     public $flag = false;
 
@@ -29,14 +29,16 @@ class CardIndex extends Component
         }, $this->type_id)->paginate(8);
         $imgs = Image::all();
 
-        return view('livewire.card-index',compact('cards','imgs','types'));
+        return view('livewire.card-index', compact('cards', 'imgs', 'types'));
     }
 
-    public function cards(){
+    public function cards()
+    {
         $this->flag = false;
     }
 
-    public function filter(){
+    public function filter()
+    {
         $this->flag = true;
     }
 }

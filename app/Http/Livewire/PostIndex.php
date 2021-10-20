@@ -29,11 +29,13 @@ class PostIndex extends Component
         return view('livewire.post-index', compact('posts', 'imgs', 'categories'));
     }
 
-    public function posts(){
+    public function posts()
+    {
         $this->flag = false;
     }
 
-    public function filter(){
+    public function filter()
+    {
         $this->flag = true;
     }
 }
