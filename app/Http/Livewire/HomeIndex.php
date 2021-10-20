@@ -14,8 +14,8 @@ class HomeIndex extends Component
 
     public function render()
     {
-        $posts = Post::paginate(8);
-        $cards = card::paginate(8);
+        $posts = Post::where('id','>',0)->latest()->paginate(8);
+        $cards = Card::where('id','>',0)->latest()->paginate(8);
         $imgs = Image::all();
         return view('livewire.home-index', compact('posts', 'imgs', 'cards'));
     }

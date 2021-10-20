@@ -30,7 +30,7 @@
     <section class="mt-0 bg-gray-200 flex flex-col lg:flex-row gap-5 mb-0 py-0 justify-center">
         @foreach ($images as $image)
         @if ($card->user->id == $image->id)
-        <div class="bg-white flex flex-wrap px-5 gap-2 my-2">
+        <div class="bg-white flex flex-wrap px-5 gap-5 my-2">
             <div class="py-5 px-5">
                 <figure>
                     <img class="object-contain h-48 w-full rounded-full" src={{ asset($image->url) }} alt="">
@@ -77,8 +77,8 @@
 
     {{-- section recomendados --}}
     <section class="mt-0">
-        <div class="container bg-gray-100 py-16 mb-2">
-            <h2 class="text-center text-black text-3xl font-mono">TAMBIEN TE PODRIA INTERESAR</h2>
+        <div class="flex justify-center bg-gray-100 py-16 mb-2">
+            <h2 class="text-black text-3xl font-mono">TAMBIEN TE PODRIA INTERESAR</h2>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($otros as $otro)

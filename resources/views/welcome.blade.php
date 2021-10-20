@@ -11,7 +11,7 @@
                     delectus reiciendis!
                 </p>
                 <!-- component -->
-         @livewire('search')
+                @livewire('search')
             </div>
         </div>
     </section>
@@ -23,8 +23,7 @@
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-8">
             <article>
                 <figure>
-                    <img class="rounded-xl h-48 w-full object-cover" src="{{ asset('img/home/producto.png') }}"
-                        alt="">
+                    <img class="rounded-xl h-48 w-full object-cover" src="{{ asset('img/home/producto.png') }}" alt="">
                 </figure>
 
                 <header class="mt-2">
@@ -79,9 +78,9 @@
 
     {{-- catalog section --}}
     <section class="mt-24 bg-gray-700 py-12">
-        <div class="container mb-3">
-            <h1 class="text-center text-white text-3xl">¿No sabes por donde empezar?</h1>
-            <p class="text-center text-white">Dale una revisada a nuestras categorias de productos y tipos de servicio
+        <div class="mb-3 flex flex-col items-center">
+            <h1 class="text-white text-3xl">¿No sabes por donde empezar?</h1>
+            <p class="text-white">Dale una revisada a nuestras categorias de productos y tipos de servicio
             </p>
         </div>
 
