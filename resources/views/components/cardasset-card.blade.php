@@ -6,10 +6,15 @@
         <h1>{{ Str::limit($card->title, 20) }}</h1>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">
         <p>{{ Str::limit($card->service->description,40) }}</p>
-        <div class="flex">
-            <p class="text-sm text-gray-500 ml-auto">
+        <div class="flex flex-col justify-start">
+            <p class="text-sm text-gray-500">
                 <i class="fas fa-tags"></i>
                 {{ $card->service->type->name }}
+            </p>
+
+            <p class="text-sm text-gray-500">
+                <i class="fas fa-tools"></i>
+                {{ Str::limit($card->service->name, 20) }}
             </p>
         </div>
         <a href="{{route('cards.show',$card)}}"
