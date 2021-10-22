@@ -30,10 +30,10 @@
     <section class="mt-0 bg-gray-200 flex flex-col lg:flex-row gap-5 mb-0 py-0 justify-center">
         @foreach ($images as $image)
         @if ($card->user->id == $image->id)
-        <div class="bg-white flex flex-wrap px-5 gap-5 my-2">
+        <div class="bg-white flex flex-wrap px-5 gap-5 my-4">
             <div class="py-5 px-5">
                 <figure>
-                    <img class="object-contain h-48 w-full rounded-full" src={{ asset($image->url) }} alt="">
+                    <img class="object-center object-cover rounded-full h-48 w-48" src={{ asset($image->url) }} alt="">
                 </figure>
             </div>
 
