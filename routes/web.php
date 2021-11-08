@@ -28,3 +28,7 @@ Route::get('cards',[CardController::class,'index'])->name('cards.index');
 Route::get('posts/{post}',[PostController::class,'show'])->name('posts.show');
 
 Route::get('cards/{card}',[CardController::class,'show'])->name('cards.show');
+
+Route::get('posts/create/{user}',[PostController::class,'create'])->name('posts.create');
+
+Route::post('posts',[PostController::class,'store'])->name('posts.store');

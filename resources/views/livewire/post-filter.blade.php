@@ -9,7 +9,7 @@
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($posts as $post)
                 @foreach ($imgs as $img)
-                    @if ($img->id == $post->id)
+                    @if (($img->imageable_id == $post->id) && ($img->imageable_type == "use App\Models\Post"))
                         <x-post-card :post="$post" :img="$img" />
                     @endif
                 @endforeach

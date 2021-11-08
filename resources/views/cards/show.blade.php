@@ -29,7 +29,7 @@
     {{-- section usersCard --}}
     <section class="mt-0 bg-gray-200 flex flex-col lg:flex-row gap-5 mb-0 py-0 justify-center">
         @foreach ($images as $image)
-        @if ($card->user->id == $image->id)
+        @if ($card->user->id == $image->imageable_id && $image->imageable_type == 'use App\Models\Profile')
         <div class="bg-white flex flex-wrap px-5 gap-5 my-4">
             <div class="py-5 px-5">
                 <figure>
@@ -83,7 +83,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($otros as $otro)
             @foreach ($images as $image)
-            @if ($image->id == $otro->id)
+            @if ($image->imageable_id == $otro->id && $image->imageable_type == 'use App\Models\Card')
             <x-cardasset-card :card="$otro" :img="$image" />
             @endif
             @endforeach
