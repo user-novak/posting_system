@@ -1,10 +1,13 @@
 <x-app-layout>
-
     {{-- section post --}}
     <section class="bg-gray-300 py-12 mb-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
             <figure>
-                <img class=" h-60 w-full object-cover" src="{{ asset($img->url) }}" alt="img"><br>
+                @foreach ($images as $image)
+                    @if ($image->imageable_id == $post->id && $image->imageable_type == 'use App\Models\Post')
+                        <img class=" h-60 w-full object-cover" src="{{ asset($image->url) }}" alt="img"><br>
+                    @endif
+                @endforeach
             </figure>
 
             <div class="text-black flex  flex-col gap-3">
@@ -29,51 +32,117 @@
 
     {{-- section usersPost --}}
     <section class="mt-0 bg-gray-200 flex flex-col lg:flex-row gap-5 mb-0 py-0 justify-center">
-        @foreach ($images as $image)
-        @if ($post->user->id == $image->imageable_id && $image->imageable_type == 'use App\Models\Profile')
-        <div class=" bg-white flex flex-wrap px-5 gap-5 my-4">
-            <div class="py-5 px-5">
-                <figure>
-                    <img class="object-center object-cover rounded-full h-48 w-48" src={{ asset($image->url) }} alt="">
-                </figure>
-            </div>
+       {{--  @foreach ($images as $image)
+            @if ($post->user->id == $image->imageable_id && $image->imageable_type == 'use App\Models\Profile')
+                <div class=" bg-white flex flex-wrap px-5 gap-5 my-4">
+                    <div class="py-5 px-5">
+                        <figure>
+                            <img class="object-center object-cover rounded-full h-48 w-48"
+                                src={{ asset($image->url) }} alt="">
+                        </figure>
+                    </div>
 
-            <div class="mt-7 flex flex-col">
-                <h2 class="flex justify-center font-mono text-2xl">
-                    USUARIO
-                </h2>
-                <div class="flex flex-col mt-5">
-                    <p class="font-serif text-2xl">{{ $post->user->name }}</p>
-                    <p>{{ $post->user->email }}</p>
-                </div>
-            </div>
+                    <div class="mt-7 flex flex-col">
+                        <h2 class="flex justify-center font-mono text-2xl">
+                            USUARIO
+                        </h2>
+                        <div class="flex flex-col mt-5">
+                            <p class="font-serif text-2xl">{{ $post->user->name }}</p>
+                            <p>{{ $post->user->email }}</p>
+                        </div>
+                    </div>
 
-            <div class="mt-7">
-                <H2 class="flex justify-center font-mono text-2xl">
-                    CONTACTAR CON EL USUARIO
-                </H2>
-                <div class=" flex flex-col gap-2 mt-3">
-                    <p>
-                        <i class="fas fa-phone-square-alt"></i>
-                        {{ $post->user->profile->cellphone_number }}
-                    </p>
-                    <p>
-                        <i class="fas fa-home"></i>
-                        {{ $post->user->profile->address }}
-                    </p>
-                    <p>
-                        <i class="fab fa-facebook-square"></i>
-                        {{ $post->user->profile->facebook }}
-                    </p>
-                    <p>
-                        <i class="fab fa-linkedin"></i>
-                        {{ $post->user->profile->linkedin }}
-                    </p>
+                    <div class="mt-7">
+                        <H2 class="flex justify-center font-mono text-2xl">
+                            CONTACTAR CON EL USUARIO
+                        </H2>
+                        <div class=" flex flex-col gap-2 mt-3">
+                            <p>
+                                <i class="fas fa-phone-square-alt"></i>
+                                {{ $post->user->profile->cellphone_number }}
+                            </p>
+                            <p>
+                                <i class="fas fa-home"></i>
+                                {{ $post->user->profile->address }}
+                            </p>
+                            <p>
+                                <i class="fab fa-facebook-square"></i>
+                                {{ $post->user->profile->facebook }}
+                            </p>
+                            <p>
+                                <i class="fab fa-linkedin"></i>
+                                {{ $post->user->profile->linkedin }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        @endif
+            @endif
         @endforeach
+        @if (!is_null($post->user->profile_photo_url) && )
+            <div class=" bg-white flex flex-wrap px-5 gap-5 my-4">
+                <div class="py-5 px-5">
+                    <figure>
+                        <img class="object-center object-cover rounded-full h-48 w-48"
+                            src={{ $post->user->profile_photo_url }} alt="">
+                    </figure>
+                </div>
+
+                <div class="mt-7 flex flex-col">
+                    <h2 class="flex justify-center font-mono text-2xl">
+                        USUARIO
+                    </h2>
+                    <div class="flex flex-col mt-5">
+                        <p class="font-serif text-2xl">{{ $post->user->name }}</p>
+                        <p>{{ $post->user->email }}</p>
+                    </div>
+                </div>
+
+                <div class="mt-7">
+                    <H2 class="flex justify-center font-mono text-2xl">
+                        CONTACTAR CON EL USUARIO
+                    </H2>
+                    <div class=" flex flex-col gap-2 mt-3">
+                        <p>
+                            <i class="fas fa-phone-square-alt"></i>
+                            @if (empty($post->user->profile->cellphone_number))
+                                <span>numero no definido</span>
+                            @else{
+                                {{ $post->user->profile->cellphone_number }}
+                                }
+                            @endif
+                        </p>
+                        <p>
+                            <i class="fas fa-home"></i>
+                            @if (empty($post->user->profile->address))
+                                <span>direccion no definida</span>
+                            @else{
+                                {{ $post->user->profile->address }}
+                                }
+                            @endif
+                        </p>
+                        <p>
+                            <i class="fab fa-facebook-square"></i>
+                            @if (empty($post->user->profile->facebook))
+                                <span>direccion no definida</span>
+                            @else{
+                                {{ $post->user->profile->facebook }}
+                                }
+                            @endif
+                        </p>
+                        <p>
+                            <i class="fab fa-linkedin"></i>
+                            @if (empty($post->user->profile->linkedin))
+                                <span>linkedin no definido</span>
+                            @else{
+                                {{ $post->user->profile->linkedin }}
+                                }
+                            @endif
+                        </p>
+                    </div>
+                </div>
+            </div>
+        @endif --}}
+        @livewire('userpost-info', ['post' => $post])
     </section>
 
     {{-- section recomendados --}}
@@ -81,13 +150,14 @@
         <div class=" bg-gray-100 py-16 mb-2 flex justify-center">
             <h2 class=" text-black text-3xl font-mono">TAMBIEN TE PODRIA INTERESAR</h2>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($otros as $otro)
-            @foreach ($images as $image)
-            @if (($image->imageable_id == $otro->id) && ($image->imageable_type == "use App\Models\Post"))
-            <x-postasset-card :post="$otro" :img="$image" />
-            @endif
-            @endforeach
+                @foreach ($images as $image)
+                    @if ($image->imageable_id == $otro->id && $image->imageable_type == 'use App\Models\Post')
+                        <x-postasset-card :post="$otro" :img="$image" />
+                    @endif
+                @endforeach
             @endforeach
         </div>
     </section>
