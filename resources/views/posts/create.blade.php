@@ -1,7 +1,7 @@
 <x-app-layout>
     <main>
         {{-- datos de presentacion --}}
-        @livewire('post-profile')
+        @livewire('post-profile',['user' => $user])
 
         {{-- datos del form --}}
         <article class="mt-5">

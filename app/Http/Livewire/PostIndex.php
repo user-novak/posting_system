@@ -14,6 +14,7 @@ class PostIndex extends Component
 
     public $category_id = 1;
     public $flag = false;
+    public $user;
 
     public function render()
     {

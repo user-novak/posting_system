@@ -18,7 +18,7 @@
 
 <!-- llamando al componente livewire -->
 
-@livewire('post-index')
+@livewire('post-index',['user' => $user])
 
 
 </x-app-layout>
