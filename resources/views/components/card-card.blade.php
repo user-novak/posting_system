@@ -1,7 +1,7 @@
 @props(['card','img'])
 
 <article class="bg-white shadow-lg rounded overflow-hidden">
-    <img class="h-35 w-full object-cover" src="{{ $img->url }}" alt=""><br>
+    <img class="h-60 w-full object-cover" src="{{ $img->url }}" alt=""><br>
     <div class="px-6 py-4">
         <h1>{{ Str::limit($card->title, 20) }}</h1>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">

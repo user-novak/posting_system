@@ -1,7 +1,7 @@
 @props(['post','img'])
 
 <article class="bg-white shadow-lg rounded overflow-hidden">
-    <img class="h-35 w-full object-cover" src="{{ asset($img->url) }}" alt=""><br>
+    <img class="h-60 w-full object-cover" src="{{ asset($img->url) }}" alt=""><br>
     <div class="px-6 py-4">
         <h1>{{ Str::limit($post->title, 20) }}</h1>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray">

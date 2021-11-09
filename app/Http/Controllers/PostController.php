@@ -24,6 +24,12 @@ class PostController extends Controller
         return view('posts.create',compact('categories','user'));
     }
 
+
+    public function save(){
+        $user = Auth::user();
+        return view('posts.save',compact('user'));
+    }
+
     public function show(Post $post)
     {
         $images = Image::all();

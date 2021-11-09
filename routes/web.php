@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,5 +31,7 @@ Route::get('posts/{post}',[PostController::class,'show'])->name('posts.show');
 Route::get('cards/{card}',[CardController::class,'show'])->name('cards.show');
 
 Route::get('posts/create/{user}',[PostController::class,'create'])->name('posts.create');
+
+Route::get('posts/save/{user}',[PostController::class,'save'])->name('posts.save');
 
 Route::post('posts',[PostController::class,'store'])->name('posts.store');
