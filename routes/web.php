@@ -34,4 +34,10 @@ Route::get('posts/create/{user}',[PostController::class,'create'])->name('posts.
 
 Route::get('posts/save/{user}',[PostController::class,'save'])->name('posts.save');
 
+Route::get('cards/create/{user}',[CardController::class,'create'])->name('cards.create');
+
+Route::get('cards/save/{user}',[CardController::class,'save'])->name('cards.save');
+
 Route::post('posts',[PostController::class,'store'])->name('posts.store');
+
+Route::post('cards',[CardController::class,'store'])->name('cards.store');

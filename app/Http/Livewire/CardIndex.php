@@ -16,6 +16,8 @@ class CardIndex extends Component
     public $type_id = 1;
     public $flag = false;
 
+    public $user;
+
     public function render()
     {
 

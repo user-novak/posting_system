@@ -146,7 +146,7 @@
                             aliquid
                         </p>
 
-                        <a href="">crear servicios</a>
+                        <a href="{{ route('cards.create', $user) }}">crear servicios</a>
                     </div>
                 </article>
             </div>

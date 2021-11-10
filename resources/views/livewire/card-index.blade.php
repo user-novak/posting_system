@@ -2,7 +2,8 @@
     {{-- barra de navegacion --}}
     <div class="bg-gray-200 py-4 mb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex">
-            <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center" wire:click="cards">
+            <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center"
+                wire:click="cards">
                 <i class="fas fa-store text-xs mr-2"></i>
                 todos los cards
             </button>
@@ -29,6 +30,18 @@
                     @endforeach
                 </div>
             </div>
+
+            @if (!empty($user))
+                <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center">
+                    <i class="fas fa-plus-square text-xs mr-2"></i>
+                    <a href="{{ route('cards.create', $user) }}">Crear servicios</a>
+                </button>
+
+                <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center">
+                    <i class="fas fa-save text-xs mr-2"></i>
+                    <a href="{{ route('cards.save', $user) }}">Mis servicios</a>
+                </button>
+            @endif
         </div>
     </div>
 
@@ -38,7 +51,7 @@
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($cards as $card)
                 @foreach ($imgs as $img)
-                    @if (($img->imageable_id == $card->id) && ($img->imageable_type == "use App\Models\Card"))
+                    @if ($img->imageable_id == $card->id && $img->imageable_type == 'use App\Models\Card')
                         <x-card-card :card="$card" :img="$img" />
                     @endif
                 @endforeach
