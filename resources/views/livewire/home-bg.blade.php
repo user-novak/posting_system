@@ -13,14 +13,12 @@
                     <!-- component -->
                     @livewire('search')
                 </div>
-                <div class="mt-4 bg-white w-72 rounded-full flex justify-center">
+                <div class="mt-4  w-72 rounded-full flex justify-start">
                     <label class="inline-flex items-center">
-                        <input class="my-auto transform scale-125" type="radio" wire:click='products' checked>
-                        <div class="title px-2 font-semibold ">PRODUCTOS</div>
+                        <input class="text-white" type="radio" wire:click='products' checked>
                     </label>
                     <label class="inline-flex items-center ml-6">
-                        <input class="my-auto transform scale-125" type="radio" wire:click='services'>
-                        <div class="px-2 font-semibold ">SERVICIOS</div>
+                        <input class="bg-yellow-500" type="radio" wire:click='services'>
                     </label>
                 </div>
             </div>
@@ -39,14 +37,12 @@
                     <!-- component -->
                     @livewire('search-card')
                 </div>
-                <div class="mt-4 bg-white w-72 rounded-full flex justify-center">
+                <div class="mt-4 w-72 rounded-full flex justify-start">
                     <label class="inline-flex items-center">
-                        <input class="my-auto transform scale-125" type="radio" wire:click='products'>
-                        <div class="title px-2 font-semibold ">PRODUCTOS</div>
+                        <input class="bg-yellow-500" type="radio" wire:click='products'>
                     </label>
                     <label class="inline-flex items-center ml-6">
-                        <input class="my-auto transform scale-125" type="radio" wire:click='services' checked>
-                        <div class="px-2 font-semibold ">SERVICIOS</div>
+                        <input class="text-white" type="radio" wire:click='services' checked>
                     </label>
                 </div>
             </div>

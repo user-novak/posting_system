@@ -1,7 +1,7 @@
 <div>
 
     {{-- barra de navegacion --}}
-    <div class="bg-gray-200 py-12 mb-6">
+    <div class="bg-gray-200 py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-baseline">
             <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center"
                 wire:click="posts">
@@ -33,15 +33,17 @@
             </div>
 
             @if (!empty($user))
-                <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center">
+                <a href="{{ route('posts.create', $user) }}"
+                    class="bg-white shadow  rounded-lg text-gray-700 flex items-center px-4 py-4 mr-4">
                     <i class="fas fa-plus-square text-xs mr-2"></i>
-                    <a href="{{ route('posts.create', $user) }}">Crear post</a>
-                </button>
+                    <span>Crear post</span>
+                </a>
 
-                <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center">
+                <a href="{{ route('posts.save', $user) }}"
+                    class="bg-white shadow  rounded-lg text-gray-700 flex items-center px-4 py-4 mr-4">
                     <i class="fas fa-save text-xs mr-2"></i>
-                    <a href="{{route('posts.save', $user)}}">Mis posts</a>
-                </button>
+                    <span>Mis posts</span>
+                </a>
             @endif
 
         </div>

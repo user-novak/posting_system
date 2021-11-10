@@ -89,7 +89,7 @@
                         <p class="text-sm text-gray-500 text-center">Gran variedad de productos que te pueden interesar
                         </p>
 
-                        <a class="" href="">ir hacia productos</a>
+                        <a href="{{route('posts.index')}}" class="bg-green-100 rounded-lg p-3 text-sm text-green-700 hover:text-white hover:bg-green-400">ir hacia productos</a>
                     </div>
 
                 </article>
@@ -109,7 +109,7 @@
                             aliquid
                         </p>
 
-                        <a href="">ir hacia servicios</a>
+                        <a href="{{route('cards.index')}}" class="bg-green-100 rounded-lg p-3 text-sm text-green-700 hover:text-white hover:bg-green-400">ir hacia servicios</a>
                     </div>
                 </article>
 
@@ -128,7 +128,7 @@
                             aliquid
                         </p>
 
-                        <a href="{{ route('posts.create', $user) }}">crear productos</a>
+                        <a href="{{ route('posts.create', $user) }}" class="bg-green-100 rounded-lg p-3 text-sm text-green-700 hover:text-white hover:bg-green-400">crear productos</a>
                     </div>
                 </article>
 
@@ -146,7 +146,7 @@
                             aliquid
                         </p>
 
-                        <a href="{{ route('cards.create', $user) }}">crear servicios</a>
+                        <a href="{{ route('cards.create', $user) }}" class="bg-green-100 rounded-lg p-3 text-sm text-green-700 hover:text-white hover:bg-green-400">crear servicios</a>
                     </div>
                 </article>
             </div>

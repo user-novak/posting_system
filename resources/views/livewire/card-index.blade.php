@@ -1,8 +1,8 @@
 <div>
     {{-- barra de navegacion --}}
-    <div class="bg-gray-200 py-4 mb-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex">
-            <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center"
+    <div class="bg-gray-200 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-y-2 items-baseline">
+            <button class="bg-white shadow  px-4 py-4 rounded-lg text-gray-700 mr-4 flex items-center"
                 wire:click="cards">
                 <i class="fas fa-store text-xs mr-2"></i>
                 todos los cards
@@ -32,20 +32,20 @@
             </div>
 
             @if (!empty($user))
-                <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center">
+                <a href="{{ route('cards.create', $user) }}" class="bg-white shadow  rounded-lg text-gray-700 flex items-center px-4 py-4 mr-4">
                     <i class="fas fa-plus-square text-xs mr-2"></i>
-                    <a href="{{ route('cards.create', $user) }}">Crear servicios</a>
-                </button>
+                    <span>Crear servicios</span>
+                </a>
 
-                <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center">
+                <a href="{{ route('cards.save', $user) }}" class="bg-white shadow  rounded-lg text-gray-700 flex items-center px-4 py-4 mr-4>
                     <i class="fas fa-save text-xs mr-2"></i>
-                    <a href="{{ route('cards.save', $user) }}">Mis servicios</a>
-                </button>
+                    <span>Mis servicios</span>
+                </a>
             @endif
         </div>
     </div>
 
-    @if ($flag){
+    @if ($flag)
         {{-- cards --}}
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
@@ -63,7 +63,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
             {{ $cards->links() }}
         </div>
-    }@else
+    @else
         @livewire('card-filter')
     @endif
 </div>
