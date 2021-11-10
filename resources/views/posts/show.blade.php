@@ -5,7 +5,7 @@
             <figure>
                 @foreach ($images as $image)
                     @if ($image->imageable_id == $post->id && $image->imageable_type == 'use App\Models\Post')
-                        <img class=" h-60 w-full object-cover" src="{{ asset($image->url) }}" alt="img"><br>
+                        <img class=" h-96 w-full object-contain" src="{{ asset($image->url) }}" alt="img"><br>
                     @endif
                 @endforeach
             </figure>

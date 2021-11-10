@@ -2,8 +2,8 @@
 
     {{-- barra de navegacion --}}
     <div class="bg-gray-200 py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-baseline">
-            <button class="bg-white shadow h-12 px-4 py-8 rounded-lg text-gray-700 mr-4 flex items-center"
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-y-2 items-baseline">
+            <button class="bg-white shadow  px-4 py-4 rounded-lg text-gray-700 mr-4 flex items-center"
                 wire:click="posts">
                 <i class="fas fa-store text-xs mr-2"></i>
                 Todos los posts
