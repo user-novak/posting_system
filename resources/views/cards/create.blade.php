@@ -1,6 +1,9 @@
 <x-app-layout>
-    <main>
-
+    <main class="grid grid-cols-2">
+        {{-- datos del profile --}}
+        <div>
+            @livewire('card-profile',['user' => $user])
+        </div>
 
         {{-- datos del form --}}
         <article class="mt-5">

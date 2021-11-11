@@ -19,8 +19,7 @@
                         <h1 class="text-center text-xl text-gray-700">Productos</h1>
                     </header>
 
-                    <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-                        aliquid
+                    <p class="text-sm text-center text-gray-500">Encuentra los productos que estas buscando.
                     </p>
                 </article>
 
@@ -34,8 +33,7 @@
                         <h1 class="text-center text-xl text-gray-700">Servicios</h1>
                     </header>
 
-                    <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-                        aliquid
+                    <p class="text-sm text-center text-gray-500">Encuentra los servicios que estas buscando.
                     </p>
                 </article>
 
@@ -49,8 +47,7 @@
                         <h1 class="text-center text-xl text-gray-700">Simplicidad</h1>
                     </header>
 
-                    <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-                        aliquid
+                    <p class="text-sm text-center text-gray-500">Plataforma simple para encontrar y crear productos y servicios.
                     </p>
                 </article>
 
@@ -64,8 +61,7 @@
                         <h1 class="text-center text-xl text-gray-700">Seguridad</h1>
                     </header>
 
-                    <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-                        aliquid
+                    <p class="text-sm text-center text-gray-500">Te garantizamos calidad y seguridad en los productos y servicios que ofrecemos.
                     </p>
                 </article>
             </div>
@@ -104,9 +100,7 @@
                             <h1 class="text-center text-xl text-gray-700 mt-2">Servicios</h1>
                         </header>
 
-                        <p class="text-sm text-gray-500 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Quia
-                            aliquid
+                        <p class="text-sm text-gray-500 text-center">Gran variedad de servicios que te pueden ayudar.
                         </p>
 
                         <a href="{{route('cards.index')}}" class="bg-green-100 rounded-lg p-3 text-sm text-green-700 hover:text-white hover:bg-green-400">ir hacia servicios</a>
@@ -123,9 +117,7 @@
                             <h1 class="text-center text-xl text-gray-700 mt-2">Publicar tus productos</h1>
                         </header>
 
-                        <p class="text-sm text-gray-500 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Quia
-                            aliquid
+                        <p class="text-sm text-gray-500 text-center">Una manera facil y sencilla de ofrecer tus productos.
                         </p>
 
                         <a href="{{ route('posts.create', $user) }}" class="bg-green-100 rounded-lg p-3 text-sm text-green-700 hover:text-white hover:bg-green-400">crear productos</a>
@@ -142,8 +134,7 @@
                             <h1 class="text-center text-xl text-gray-700 mt-2">Publicar tus servicios</h1>
                         </header>
 
-                        <p class="text-sm text-gray-500 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-                            aliquid
+                        <p class="text-sm text-gray-500 text-center">Una manera facil y sencilla de ofrecer tus servicios.
                         </p>
 
                         <a href="{{ route('cards.create', $user) }}" class="bg-green-100 rounded-lg p-3 text-sm text-green-700 hover:text-white hover:bg-green-400">crear servicios</a>

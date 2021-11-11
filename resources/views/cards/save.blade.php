@@ -1,3 +1,7 @@
 <x-app-layout>
-    probando save cards
+    <main>
+        <div>
+            @livewire('save-cards',['user' => $user])
+        </div>
+    </main>
 </x-app-layout>

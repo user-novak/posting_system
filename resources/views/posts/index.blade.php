@@ -6,9 +6,7 @@
             <div class="w-full md:w-3/4 lg:w-1/2">
                 <h1 class="text-white font-bold text-4xl">Todos los productos que necesistes a solo 1 click!!!</h1>
                 <p class="text-white text-lg mt-2 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi explicabo blanditiis adipisci fugiat
-                    dolorum vero fugit enim sapiente illo asperiores, nam ad at quia, aperiam quis doloremque magni
-                    delectus reiciendis!
+                    La venta es esencialmente una transferencia de sentimientos entre dos personas.
                 </p>
                 <!-- component -->
                 @livewire('search')
@@ -18,9 +16,9 @@
 
     <!-- llamando al componente livewire -->
     @if (empty($user))
-        @livewire('post-index')
+    @livewire('post-index')
     @else
-        @livewire('post-index',['user' => $user])
+    @livewire('post-index',['user' => $user])
     @endif
 
 
