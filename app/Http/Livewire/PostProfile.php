@@ -22,5 +22,6 @@ class PostProfile extends Component
         $profile->facebook = $this->facebook;
         $profile->linkedin = $this->linkedin;
         $profile->update();
+        redirect()->route('posts.create',$this->user);
     }
 }

@@ -26,8 +26,10 @@ class CardController extends Controller
 
     public function save()
     {
+        $imgs = Image::all();
+        $cards = Card::all();
         $user = Auth::user();
-        return view('cards.save', compact('user'));
+        return view('cards.save', compact('user','cards','imgs'));
     }
 
     public function show(Card $card)

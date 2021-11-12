@@ -9,6 +9,7 @@ use Livewire\Component;
 class SavePosts extends Component
 {
     public $user;
+    public $flag = false;
 
     public function render()
     {
@@ -16,4 +17,8 @@ class SavePosts extends Component
         $imgs = Image::all();
         return view('livewire.save-posts',compact('posts','imgs'));
     }
+
+    public function load(){
+        $this->flag = true;
+     }
 }
