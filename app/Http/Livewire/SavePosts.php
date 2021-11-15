@@ -9,16 +9,17 @@ use Livewire\Component;
 class SavePosts extends Component
 {
     public $user;
-    public $flag = false;
+    public $post_save_count = 0;
 
     public function render()
     {
-        $posts = Post::where('id','>',0)->latest()->paginate(8);
+        $posts = Post::where('id', '>', 0)->latest()->paginate(8);
         $imgs = Image::all();
-        return view('livewire.save-posts',compact('posts','imgs'));
+        return view('livewire.save-posts', compact('posts', 'imgs'));
     }
 
-    public function load(){
-        $this->flag = true;
-     }
+    public function load()
+    {
+        $this->post_save_count = 1 + $this->post_save_count;
+    }
 }

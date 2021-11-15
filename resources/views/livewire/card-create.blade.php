@@ -2,7 +2,7 @@
     @if (empty($user->profile->cellphone_number))
     <main class="grid grid-cols-2">
         <div>
-            @livewire('card-profile',['user' => $user])
+            @livewire('user-profile',['user' => $user])
         </div>
         <div>
             <p>
@@ -14,7 +14,7 @@
     <main class="grid grid-cols-2">
         {{-- datos del profile --}}
         <div>
-            @livewire('card-profile',['user' => $user])
+            @livewire('user-profile',['user' => $user])
         </div>
 
         {{-- datos del form --}}

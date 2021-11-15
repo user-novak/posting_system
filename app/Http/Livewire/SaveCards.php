@@ -9,8 +9,7 @@ use Livewire\Component;
 class SaveCards extends Component
 {
     public $user;
-    public $flag = false;
-    
+    public $save_cards_count = 0;
 
     public function render()
     {
@@ -20,7 +19,6 @@ class SaveCards extends Component
     }
 
     public function load(){
-       $this->flag = true;
-       
+       $this->save_cards_count += 1 + $this->save_cards_count;
     }
 }

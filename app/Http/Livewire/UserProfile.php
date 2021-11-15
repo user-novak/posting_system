@@ -4,17 +4,16 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Profile;
-use App\Models\User;
 
-class CardProfile extends Component
+class UserProfile extends Component
 {
 
     public $user;
-    public $cellphone_number, $address, $facebook, $linkedin;
+    public $cellphone_number, $address , $facebook , $linkedin;
 
     public function render()
     {
-        return view('livewire.card-profile');
+        return view('livewire.user-profile');
     }
 
     public function update(Profile $profile)
