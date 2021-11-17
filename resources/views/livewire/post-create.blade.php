@@ -6,9 +6,10 @@
                 @livewire('user-profile',['user' => $user])
             </div>
             <div>
-                <p>
-                    No puedes publicar productos sino tienes un perfil creado :(
+                <p class="text center text-3xl text-blue-600 uppercase font-black">
+                    No puedes publicar servicios sino tienes un <span class="ml-60">perfil creado :(</span>
                 </p>
+                <img class="" src="{{ asset('img/home/user_profile.png') }}" alt="">
             </div>
         </main>
     @else
@@ -24,30 +25,30 @@
                     enctype="multipart/form-data">
                     @csrf
                     <label class="flex gap-2 justify-center items-baseline">
-                        <p>Ingresar nombre del post</p>
+                        <p class="text-blue-500 font-black">Ingresar nombre del post</p>
                         <input class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded" type="text"
                             name="title" autofocus>
                     </label>
 
                     <label class="flex gap-2 justify-center items-baseline">
-                        <p>Ingresar el nombre del producto</p>
-                        <input class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded" type="text"
-                            name="name">
+                        <p class="text-blue-500 font-black">Ingresar el nombre del producto</p>
+                        <input class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded"
+                            type="text" name="name">
                     </label>
 
                     <label class="flex gap-2 justify-center items-baseline">
-                        <p>Ingresar la descripcion del producto</p>
+                        <p class="text-blue-500 font-black">Ingresar la descripcion del producto</p>
                         <textarea class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded"
                             name="description"></textarea>
                     </label>
 
                     <label class="flex gap-2 justify-center items-baseline">
-                        <p>Ingresar imagen del producto</p>
+                        <p class="text-blue-500 font-black">Ingresar imagen del producto</p>
                         <input type="file" name="image" accept="image/*">
                     </label>
 
                     <label class="flex gap-2 justify-center" for="form_posts">
-                        <p>Ingresar la categoria del producto</p>
+                        <p class="text-blue-500 font-black">Ingresar la categoria del producto</p>
                         <select name="category_name">
                             <option disabled selected>Seleccione una categoria</option>
                             @foreach ($categories as $category)

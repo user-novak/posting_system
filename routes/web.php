@@ -30,6 +30,10 @@ Route::get('posts/{post}',[PostController::class,'show'])->name('posts.show');
 
 Route::get('cards/{card}',[CardController::class,'show'])->name('cards.show');
 
+Route::get('posts/edit/{post}',[PostController::class,'edit'])->name('posts.edit');
+
+Route::get('cards/edit/{card}',[CardController::class,'edit'])->name('cards.edit');
+
 Route::get('posts/create/{user}',[PostController::class,'create'])->name('posts.create');
 
 Route::get('posts/save/{user}',[PostController::class,'save'])->name('posts.save');

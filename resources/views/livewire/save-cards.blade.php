@@ -16,19 +16,27 @@
                                     <h1>{{ Str::limit($card->title, 20) }}</h1>
                                     <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                                     <p>{{ Str::limit($card->service->description, 40) }}</p>
-                                    <div class="flex flex-col justify-start">
+                                    <div class="flex flex-row flex-wrap justify-start gap-x-2">
                                         <p class="text-sm text-gray-500 mt-1">
                                             <i class="fas fa-tags"></i>
                                             {{ $card->service->type->name }}
                                         </p>
 
-                                        <p class="text-sm text-gray-500">
+                                        <p class="text-sm text-gray-500 mt-1">
                                             <i class="fas fa-shopping-bag"></i>
                                             {{ Str::limit($card->service->name, 20) }}
                                         </p>
                                     </div>
+                                    <div class="mt-1 grid grid-cols-2 gap-x-1">
+                                        <a href="{{route('cards.edit',$card)}}"
+                                            class="text-center bg-blue-500  py-1 px-3 text-white font-semibold rounded-lg">
+                                            <i class="fas fa-edit mr-1"></i>edit</a>
+                                        <button wire:click='destroy({{ $card->id }})'
+                                            class="text-center bg-red-500  py-1 px-3 text-white font-semibold rounded-lg hover:bg-red-600"><i
+                                                class="fas fa-trash mr-1"></i>delete</button>
+                                    </div>
                                     <a href="{{ route('cards.show', $card) }}"
-                                        class="block text-center w-full mt-4 py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+                                        class="block text-center w-full mt-2 py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
                                         más información
                                     </a>
                                 </div>
@@ -48,7 +56,7 @@
     @else
         <div class="flex flex-col flex-wrap content-center">
             <h2 class="text-blue-400 font-black text-3xl">Aun no has publicado ningun servicio :(</h2>
-            <img class="w-96 h-96 ml-16" src="{{asset('img/cards/save_vacio.png')}}" alt="">
+            <img class="w-96 h-96 ml-16" src="{{ asset('img/cards/save_vacio.png') }}" alt="">
         </div>
     @endif
 

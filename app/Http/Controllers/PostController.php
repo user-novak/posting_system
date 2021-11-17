@@ -30,6 +30,10 @@ class PostController extends Controller
         return view('posts.save',compact('user'));
     }
 
+    public function edit(Post $post){
+        return view('posts.edit',compact('post'));
+    }
+
     public function show(Post $post)
     {
         $images = Image::all();

@@ -37,7 +37,7 @@
                     <span>Crear servicios</span>
                 </a>
 
-                <a href="{{ route('cards.save', $user) }}" class="bg-white shadow  rounded-lg text-gray-700 flex items-center px-4 py-4 mr-4>
+                <a href="{{ route('cards.save', $user) }}" class="bg-white shadow  rounded-lg text-gray-700 flex items-center px-4 py-4 mr-4">
                     <i class="fas fa-save text-xs mr-2"></i>
                     <span>Mis servicios</span>
                 </a>

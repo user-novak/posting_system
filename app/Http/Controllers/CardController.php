@@ -32,6 +32,10 @@ class CardController extends Controller
         return view('cards.save', compact('user','cards','imgs'));
     }
 
+    public function edit(Card $card){
+        return view('cards.edit',compact('card'));
+    }
+
     public function show(Card $card)
     {
         $img = Image::find($card->id);

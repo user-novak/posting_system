@@ -16,6 +16,13 @@ class UserProfile extends Component
         return view('livewire.user-profile');
     }
 
+    public function mount(){
+        $this->cellphone_number = $this->user->profile->cellphone_number;
+        $this->address = $this->user->profile->address;
+        $this->facebook = $this->user->profile->facebook;
+        $this->linkedin = $this->user->profile->linkedin;
+    }
+
     public function update(Profile $profile)
     {
         $profile->cellphone_number = $this->cellphone_number;

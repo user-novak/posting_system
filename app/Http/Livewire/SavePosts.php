@@ -22,4 +22,9 @@ class SavePosts extends Component
     {
         $this->post_save_count = 1 + $this->post_save_count;
     }
+
+    public function destroy($id){
+        Post::destroy($id);
+        $this->post_save_count = 0;
+    }
 }

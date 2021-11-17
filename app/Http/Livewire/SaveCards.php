@@ -21,4 +21,9 @@ class SaveCards extends Component
     public function load(){
        $this->save_cards_count += 1 + $this->save_cards_count;
     }
+
+    public function destroy($id){
+        Card::destroy($id);
+        $this->save_cards_count = 0;
+    }
 }
