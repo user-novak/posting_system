@@ -51,9 +51,6 @@ class CardController extends Controller
     }
     public function store(Request $request)
     {
-        /* $request->validate([
-            'image' => 'required|image'
-        ]); */
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         /* fijando categoria */

@@ -15,8 +15,8 @@
 
     <!-- llamando al componente livewire -->
     @if (empty($user))
-    @livewire('card-index')
+        @livewire('card-index')
     @else
-    @livewire('card-index',['user' => $user])
+        @livewire('card-index',['user' => $user])
     @endif
 </x-app-layout>
