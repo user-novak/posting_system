@@ -26,7 +26,7 @@
                     name="form_posts" enctype="multipart/form-data">
                     @csrf
                     <label class="flex gap-2 justify-center">
-                        <p class="text-blue-500 font-black">Ingresar nombre del card</p>
+                        <p class="text-blue-500 font-black">Ingresar enunciado  </p>
                         <input class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded" type="text"
                             name="title" autofocus>
                     </label>
@@ -43,14 +43,15 @@
                             name="description"></textarea>
                     </label>
 
-                    <label class="flex gap-2 justify-center">
-                        <p class="text-blue-500 font-black">Ingresar imagen del servicio</p>
-                        <input type="file" name="image" accept="image/*">
+                    <label class="flex gap-2 justify-center flex-col items-center">
+                        <i class="fas fa-cloud-upload-alt fa-3x text-blue-500 cursor-pointer hover:text-blue-600"></i>
+                        <p class="text-blue-500 font-black cursor-pointer hover:text-blue-600">Ingresar imagen del servicio</p>
+                        <input type="file" name="image" class="hidden" accept="image/*">
                     </label>
 
                     <label class="flex gap-2 justify-center" for="form_posts">
                         <p class="text-blue-500 font-black">Ingresar el tipo de servicio</p>
-                        <select name="type_name">
+                        <select name="type_name" class=" border-0 rounded-xl">
                             <option disabled selected>Seleccione un tipo</option>
                             @foreach ($types as $type)
                                 <option value="{{ $type->name }}">{{ $type->name }}</option>

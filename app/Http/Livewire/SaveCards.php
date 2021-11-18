@@ -24,6 +24,6 @@ class SaveCards extends Component
 
     public function destroy($id){
         Card::destroy($id);
-        $this->save_cards_count = 0;
+        $this->post_save_count = $this->post_save_count -1;
     }
 }

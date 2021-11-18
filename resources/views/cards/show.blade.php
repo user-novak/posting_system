@@ -6,7 +6,7 @@
             <figure>
                 @foreach ($images as $image)
                     @if ($image->imageable_id == $card->id && $image->imageable_type == 'use App\Models\Card')
-                        <img class=" h-60 w-full object-cover" src="{{ asset($image->url) }}" alt="img"><br>
+                        <img class="h-96 w-full object-contain" src="{{ asset($image->url) }}" alt="img"><br>
                     @endif
                 @endforeach
             </figure>
