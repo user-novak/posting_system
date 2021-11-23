@@ -48,9 +48,13 @@ class PostController extends Controller
     }
 
     public function store(Request $request){
-        /* $request->validate([
-            'image' => 'required|image'
-        ]); */
+        $request->validate([
+            'title' => 'required',
+            'name' => 'required',
+            'description' => 'required|min:20',
+            'image' => 'required',
+            'category_name' => 'required'
+        ]);
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         /* fijando categoria */

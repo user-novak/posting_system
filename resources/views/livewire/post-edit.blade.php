@@ -11,7 +11,7 @@
             </div>
 
             <div>
-                <span class="text-blue-500 font-black">nombre del producto</span>
+                <span class="text-blue-500 font-black">Nombre del producto</span>
                 <input class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded" type="text"
                     value="{{ $post->product->name }}" wire:model="product_name">
             </div>
@@ -26,6 +26,11 @@
                 <button class="cursor-pointer bg-blue-600 py-3 px-5 rounded-full text-white hover:bg-blue-800"
                     wire:click='update'>actualizar</button>
             </div>
+            @if ($alert)
+                <div>
+                    <h3 class=" text-lg text-red-600">No deje campos vacios</h3>
+                </div>
+            @endif
         </div>
     </div>
 </div>

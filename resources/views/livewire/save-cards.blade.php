@@ -48,7 +48,7 @@
         </div>
     </section>
 
-    @if ($save_cards_count > 0)
+    @if ($save_cards_count >= 1)
         {{-- aplicando el paginate --}}
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
             {{ $cards->links() }}

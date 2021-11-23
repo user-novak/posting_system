@@ -26,19 +26,19 @@
                     name="form_posts" enctype="multipart/form-data">
                     @csrf
                     <label class="flex gap-2 justify-center">
-                        <p class="text-blue-500 font-black">Ingresar enunciado  </p>
+                        <p class="text-blue-500 font-black mt-2">Ingresar enunciado  </p>
                         <input class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded" type="text"
                             name="title" autofocus>
                     </label>
 
                     <label class="flex gap-2 justify-center">
-                        <p class="text-blue-500 font-black">Ingresar el nombre del servicio</p>
+                        <p class="text-blue-500 font-black mt-2">Ingresar el nombre del servicio</p>
                         <input class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded"
                             type="text" name="name">
                     </label>
 
                     <label class="flex gap-2 justify-center">
-                        <p class="text-blue-500 font-black">Ingresar la descripcion del servicio</p>
+                        <p class="text-blue-500 font-black mt-5">Ingresar la descripcion del servicio</p>
                         <textarea class="text-center bg-gray-200 text-black border border-gray-200 rounded"
                             name="description"></textarea>
                     </label>
@@ -50,7 +50,7 @@
                     </label>
 
                     <label class="flex gap-2 justify-center" for="form_posts">
-                        <p class="text-blue-500 font-black">Ingresar el tipo de servicio</p>
+                        <p class="text-blue-500 font-black mt-2">Ingresar el tipo de servicio</p>
                         <select name="type_name" class=" border-0 rounded-xl">
                             <option disabled selected>Seleccione un tipo</option>
                             @foreach ($types as $type)

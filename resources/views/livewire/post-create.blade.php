@@ -19,7 +19,8 @@
 
             {{-- datos del form --}}
             <article>
-                <h2 class="text-3xl text-center text-blue-600 font-black uppercase">ofrecer productos de manera sencilla</h2>
+                <h2 class="text-3xl text-center text-blue-600 font-black uppercase">ofrecer productos de manera sencilla
+                </h2>
                 <form action="{{ route('posts.store', $user) }}" method="POST"
                     class="flex flex-col gap-y-3 h-full align-middle flex-wrap justify-center" name="form_posts"
                     enctype="multipart/form-data">
@@ -36,15 +37,16 @@
                             type="text" name="name">
                     </label>
 
-                    <label class="flex gap-2 justify-center items-baseline">
-                        <p class="text-blue-500 font-black">Ingresar la descripcion del producto</p>
+                    <label class="flex gap-2 justify-center">
+                        <p class="text-blue-500 font-black mt-5">Ingresar la descripcion del producto</p>
                         <textarea class="w-60 text-center bg-gray-200 text-black border border-gray-200 rounded"
                             name="description"></textarea>
                     </label>
 
                     <label class="flex flex-col gap-2 flex-wrap items-center">
                         <i class="fas fa-cloud-upload-alt fa-3x text-blue-500 cursor-pointer hover:text-blue-600"></i>
-                        <p class="text-blue-500 font-black cursor-pointer hover:text-blue-600">Ingresar imagen del producto</p>
+                        <p class="text-blue-500 font-black cursor-pointer hover:text-blue-600">Ingresar imagen del
+                            producto</p>
                         <input type="file" name="image" class="hidden" accept="image/*">
                     </label>
 
