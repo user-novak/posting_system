@@ -25,6 +25,12 @@ class UserProfile extends Component
 
     public function update(Profile $profile)
     {
+        $this->validate(rules: [
+            'cellphone_number' => 'required|min:9|max:9',
+            'address' => 'required|min:10',
+            'facebook' => 'required',
+            'linkedin' => 'required'
+        ]);
         $profile->cellphone_number = $this->cellphone_number;
         $profile->address = $this->address;
         $profile->facebook = $this->facebook;

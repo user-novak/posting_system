@@ -9,7 +9,6 @@ use Livewire\Component;
 class PostEdit extends Component
 {
     public $post;
-    public $alert = false;
     public $enunciado, $product_name, $description;
 
     public function render()
@@ -26,17 +25,18 @@ class PostEdit extends Component
 
     public function update()
     {
-        if (empty($this->enunciado) || empty($this->description) || empty($this->product_name)) {
-            $this->alert = true;
-        } else {
-            $user = User::find($this->post->user_id);
-            $product = Product::find($this->post->product_id);
-            $this->post->title = $this->enunciado;
-            $product->name = $this->product_name;
-            $product->description = $this->description;
-            $this->post->update();
-            $product->update();
-            redirect()->route('posts.save', $user);
-        }
+        $this->validate(rules: [
+            'enunciado' => 'required',
+            'product_name' => 'required',
+            'description' => 'required|min:20',
+        ]);
+        $user = User::find($this->post->user_id);
+        $product = Product::find($this->post->product_id);
+        $this->post->title = $this->enunciado;
+        $product->name = $this->product_name;
+        $product->description = $this->description;
+        $this->post->update();
+        $product->update();
+        redirect()->route('posts.save', $user);
     }
 }
